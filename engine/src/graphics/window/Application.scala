@@ -14,8 +14,6 @@ object Application extends IOApp {
 
   val amogus = new AmogusImpl[IO]
   override def run(args: List[String]): IO[ExitCode] = {
-    // val window = 0L
-    // glfwMakeContextCurrent(0L)
     amogus.balls.evalOn(MainThread) >>
       IO.pure(
         ExitCode.Success
